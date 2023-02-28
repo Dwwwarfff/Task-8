@@ -1,9 +1,3 @@
-# Ccылка на 8 task:
-# https://docs.google.com/document/d/18kSJw3s1mWnL3Z1HE4avoGahlc96vcMFtSlQyVLZa3c/edit
-# Я делала по 17 картинке
-# Для подбора координат используйте этот сайт:
-# https://www.desmos.com/calculator?lang=ru
-
 """ Из (from) файлов наших классов импортируем (import) сами классы.
     Т.е. наш класс Point находится в файле Point.py. Аналогично с остальными классами. """
 
@@ -43,16 +37,17 @@ def init_color(p):
     if parabola1.is_point_inside_of_parabola(p) and not parabola2.is_point_inside_of_parabola(p):
         return Color.GREEN.name
     elif parabola1.is_point_inside_of_parabola(p) and parabola2.is_point_inside_of_parabola(p):
-        return Color.GREY.name
-    elif line1.is_point_at_the_right_side_of_the_line(p) and line2.is_point_at_the_right_side_of_the_line(p):
+        return Color.GRAY.name
+    elif  line1.is_point_at_the_right_side_of_the_line(p) and  line2.is_point_at_the_right_side_of_the_line(p):
+        return Color.GRAY.name
+    elif not line2.is_point_at_the_right_side_of_the_line(p) and line1.is_point_at_the_right_side_of_the_line(p):
         return Color.GREEN.name
     elif not line1.is_point_at_the_right_side_of_the_line(p) and not parabola2.is_point_inside_of_parabola(
             p) and not parabola1.is_point_inside_of_parabola(p):
         return Color.ORANGE.name
-    elif line2.is_point_at_the_right_side_of_the_line(p) and parabola2.is_point_inside_of_parabola(p):
-        return Color.GREY.name
-    elif parabola2.is_point_inside_of_parabola(p) and not parabola1.is_point_inside_of_parabola(
-            p) and not line2.is_point_at_the_right_side_of_the_line(p):
+    elif  not line2.is_point_at_the_right_side_of_the_line(p): #and parabola2.is_point_inside_of_parabola(p):
+        return Color.GRAY.name
+    else:
         return Color.WHITE.name
 
 # line2 - горизонтальная; parabola2 - горизонтальная

@@ -6,7 +6,7 @@ from enum import Enum
 
 class Color(Enum):
     WHITE = 0
-    GREY = 1
+    GRAY = 1
     ORANGE = 2
     GREEN = 3
 
